@@ -351,7 +351,7 @@ fn parse_field(smali: &str) -> IResult<&str, SmaliField>
     IResult::Ok((input, field))
 }
 
-fn parse_instruction(smali: &str) -> IResult<&str, SmaliInstruction>
+pub fn parse_instruction(smali: &str) -> IResult<&str, SmaliInstruction>
 {
     // Line
     if let IResult::Ok((o, _)) = ws(tag(".line"))(smali)
